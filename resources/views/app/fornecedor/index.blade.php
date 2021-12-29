@@ -21,6 +21,7 @@
 @else
     <h3>Ainda não existem fornecedores cadastrados</h3>
 @endif --}}
+
 @isset($fornecedores)
     Fornecedor: {{ $fornecedores[0]['nome']}}
     <br>
@@ -28,6 +29,9 @@
     <br>
     @isset($fornecedores[0]['cnpj'])
         CNPJ: {{ $fornecedores[0]['cnpj']}}
+        @empty($fornecedores[0]['cnpj'])
+            - Vazio
+        @endempty    
     @endisset
 @endisset
 
