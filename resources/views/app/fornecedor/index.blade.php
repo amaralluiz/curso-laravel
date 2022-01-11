@@ -27,12 +27,7 @@
     <br>
     Status: {{ $fornecedores[0]['status']}}
     <br>
-    @isset($fornecedores[0]['cnpj'])
-        CNPJ: {{ $fornecedores[0]['cnpj']}}
-        @empty($fornecedores[0]['cnpj'])
-            - Vazio
-        @endempty    
-    @endisset
+    CNPJ: {{ $fornecedores[0]['cnpj'] ?? 'Dado não foi preenchido' }}
 @endisset
 
 {{-- uso do do unless em comparaçao com if 
